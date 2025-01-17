@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import peopleReducer from './slice/peopleSlice';
+import requestManagerReducer from './slice/requestManagerSlice';
 
 
 const store = configureStore({
     reducer:{
-        people:peopleReducer
+        requestManager:requestManagerReducer
     }
 })
 
