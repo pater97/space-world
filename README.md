@@ -6,3 +6,11 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+todo:
+
+- loader : impostare responsive service
+- un div centrato che verrà sostituito dalla tabella
+- impostare la navicella dei logo come svg con un blu leggermente meno scuro 
+- utilizzare prev e next

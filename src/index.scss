@@ -1,0 +1,31 @@
+/* reset settings */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// color varibles
+$brand-color: #613dc1;
+$secondary-color:#050816;
+
+// animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

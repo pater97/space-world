@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 // -- STYLE
-import "./index.css";
+import "./index.scss";
 // -- SCREEN
 import App from "./App.jsx";
 // -- REDUX

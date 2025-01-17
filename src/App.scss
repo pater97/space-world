@@ -1,0 +1,27 @@
+@import './index.scss';
+
+#mainContainer{
+    background-color: $secondary-color;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .logoContainer{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 7rem;
+        z-index: 1;
+        pointer-events: none;
+        animation: fadeIn 1s ease-in-out;
+        @media screen and (min-width:768px) {
+            padding: 10rem;
+        }
+        .logo{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
