@@ -1,14 +1,20 @@
 import { createRoot } from "react-dom/client";
+// -- STYLE
 import "./index.css";
+// -- SCREEN
 import App from "./App.jsx";
+// -- REDUX
 import store from "./store/index.js";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router";
+// -- ROUTING
+import { BrowserRouter, Routes, Route } from "react-router";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<App />} />
+      </Routes>
     </BrowserRouter>
   </Provider>
 );
