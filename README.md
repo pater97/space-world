@@ -14,3 +14,4 @@ todo:
 - un div centrato che verrà sostituito dalla tabella
 - impostare la navicella dei logo come svg con un blu leggermente meno scuro 
 - utilizzare prev e next
+- aggiungere 404

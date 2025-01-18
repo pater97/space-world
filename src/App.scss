@@ -2,9 +2,37 @@
 
 #mainContainer{
     background-color: $secondary-color;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     position: relative;
+    .head{
+        display: flex;
+        justify-content: center;
+        padding: 3rem 1rem;
+        h1{
+            color: $brand-color;
+            text-transform: uppercase;
+        }
+    }
+    .inputContainer{
+        display: flex;
+        justify-content: center;
+        padding: .5rem 0 2rem 0;
+        input{
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid $brand-color;
+          padding: 10px 20px;
+          color: white;
+          outline: none;
+        }
+      }
+    .tableContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+
+    }
     .logoContainer{
         height: 100%;
         width: 100%;
