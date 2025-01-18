@@ -16,6 +16,7 @@ $transition-time: 0.5s;
   align-items: center;
   transition: opacity $transition-time ease;
   z-index: 999;
+  animation: fadeIn2 .3s;
 
   .popup {
     background-color: $popup-color;
@@ -23,8 +24,7 @@ $transition-time: 0.5s;
     width: 350px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-50px);
-    transition: transform $transition-time ease-out;
+
 
 
     .popup-header {
@@ -37,6 +37,7 @@ $transition-time: 0.5s;
       h2 {
         font-size: 1.4rem;
         color: #333;
+        text-transform: uppercase;
       }
 
       .popup-close {

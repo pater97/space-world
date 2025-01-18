@@ -12,7 +12,8 @@ const initialState = {
   prevPage:null,
   planetDetails:null,
   loadingPlanetDetails:false,
-  errorPlanetDetails:null
+  errorPlanetDetails:null,
+  showPlanetDetails:false
 };
 
 const requestManager = createSlice({
@@ -24,6 +25,12 @@ const requestManager = createSlice({
   planetDetails:null,
   loadingPlanetDetails:false,
   errorPlanetDetails:null,
+  showPlanetDetails:false,
+  reducers: {
+    setShowPlanetDetails: (state) => {
+      state.showPlanetDetails = !state.showPlanetDetails;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPeople.pending, (state) => {
@@ -58,4 +65,5 @@ const requestManager = createSlice({
   },
 });
 
+export const { setShowPlanetDetails } = requestManager.actions;
 export default requestManager.reducer;

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 // -- REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPeople, fetchPlanetDetails } from "./store/thunk";
+import { setShowPlanetDetails } from "./store/slice/requestManagerSlice";
 // -- ASSETS
 import logo from "./assets/logo.svg";
 // -- COMPONENTS
@@ -23,6 +24,7 @@ function App() {
     planetDetails,
     loadingPlanetDetails,
     errorPlanetDetails,
+    showPlanetDetails
   } = useSelector((state) => state.requestManager);
   const {} = useSelector((state) => state.requestManager);
   // # STATE
@@ -35,12 +37,12 @@ function App() {
   const onPlanetClick = (planetUrl) => {
     const planetId = planetUrl.split("/").slice(-2, -1)[0];
     dispatch(fetchPlanetDetails(planetId));
+    dispatch(setShowPlanetDetails()); 
   };
 
   const closePopup = () => {
-    dispatch()
-  }
-
+    dispatch(setShowPlanetDetails()); 
+  };
   useEffect(() => {
     dispatch(fetchPeople());
   }, []);
@@ -58,7 +60,7 @@ function App() {
         {!loading && !error && people && (
           <input
             type="text"
-            placeholder="Search by name"
+            placeholder="Search by person name"
             value={search}
             onChange={handleSearchChange}
             className="search-input"
@@ -78,8 +80,8 @@ function App() {
         )}
       </div>
       {/* POPUP */}
-      {planetDetails && (
-        <Popup planetData={planetDetails} closePopup={closePopup} />
+      {showPlanetDetails &&  (
+        <Popup planetData={planetDetails} closePopup={closePopup} loading={loadingPlanetDetails} error={errorPlanetDetails}/>
       )}
     </main>
   );
