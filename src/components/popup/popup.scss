@@ -1,0 +1,74 @@
+@import '../../index.scss';
+
+$popup-bg-color: rgba(0, 0, 0, 0.7);
+$popup-color: white;
+$transition-time: 0.5s;
+
+.popup-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $popup-bg-color;
+  justify-content: center;
+  align-items: center;
+  transition: opacity $transition-time ease;
+  z-index: 999;
+
+  .popup {
+    background-color: $popup-color;
+    border-radius: 8px;
+    width: 350px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50px);
+    transition: transform $transition-time ease-out;
+
+
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+
+      h2 {
+        font-size: 1.4rem;
+        color: #333;
+      }
+
+      .popup-close {
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $brand-color;
+        }
+      }
+    }
+
+    .popup-content {
+      margin-top: 15px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          font-size: 1rem;
+          color: #555;
+          margin-bottom: 8px;
+
+          strong {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
