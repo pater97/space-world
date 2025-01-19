@@ -6,9 +6,9 @@ import { getPlanetDetails } from '../../services';
 
 export const fetchPeople = createAsyncThunk(
   'requestManager/fetchPeople', 
-  async (_, thunkAPI) => {  
+  async (tablePage, thunkAPI) => {  
     try {
-      const peopleData = await getPeople();
+      const peopleData = await getPeople(tablePage);
       return peopleData; 
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

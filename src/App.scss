@@ -32,7 +32,7 @@
         justify-content: center;
         align-items: center;
         padding: 1rem 0;
-
+        flex-wrap: wrap;
     }
     .logoContainer{
         height: 100%;
@@ -58,7 +58,8 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        padding: 1rem ;
+        padding: 1rem;
+        width: 100%;
         .separator{
             height: 5px;
             width: 5px;

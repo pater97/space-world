@@ -26,7 +26,7 @@ function App() {
     errorPlanetDetails,
     showPlanetDetails,
     nextPage,
-    prevPage
+    prevPage,
   } = useSelector((state) => state.requestManager);
   const {} = useSelector((state) => state.requestManager);
   // # STATE
@@ -39,12 +39,17 @@ function App() {
   const onPlanetClick = (planetUrl) => {
     const planetId = planetUrl.split("/").slice(-2, -1)[0];
     dispatch(fetchPlanetDetails(planetId));
-    dispatch(setShowPlanetDetails()); 
+    dispatch(setShowPlanetDetails());
   };
 
   const closePopup = () => {
-    dispatch(setShowPlanetDetails()); 
+    dispatch(setShowPlanetDetails());
   };
+
+  const tableNavigation = (tablePage) => () => {
+    dispatch(fetchPeople(tablePage));
+  };
+
   useEffect(() => {
     dispatch(fetchPeople());
   }, []);
@@ -73,7 +78,19 @@ function App() {
       <div className="tableContainer">
         {loading && !error && <Loader />}
         {!loading && !error && people && (
-          <Table data={people} search={search} onPlanetClick={onPlanetClick} />
+          <>
+            <Table
+              data={people}
+              search={search}
+              onPlanetClick={onPlanetClick}
+            />
+            {/* // NAVIGATION  */}
+            <div className="navigation">
+              <span onClick={tableNavigation(prevPage)}>{prevPage}</span>
+              <div className="separator"></div>
+              <span onClick={tableNavigation(nextPage)}>{nextPage}</span>
+            </div>
+          </>
         )}
         {!loading && error && (
           <div className="error-message">
@@ -81,15 +98,14 @@ function App() {
           </div>
         )}
       </div>
-      {/* NAVIGATION */}
-      <div className="navigation">
-        <span>{prevPage}</span>
-        <div className="separator"></div>
-        <span>{nextPage}</span>
-      </div>
       {/* POPUP */}
-      {showPlanetDetails &&  (
-        <Popup planetData={planetDetails} closePopup={closePopup} loading={loadingPlanetDetails} error={errorPlanetDetails}/>
+      {showPlanetDetails && (
+        <Popup
+          planetData={planetDetails}
+          closePopup={closePopup}
+          loading={loadingPlanetDetails}
+          error={errorPlanetDetails}
+        />
       )}
     </main>
   );

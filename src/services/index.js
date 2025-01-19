@@ -12,9 +12,11 @@ const api = axios.create({
 });
 
 // # GET PEOPLE
-export async function getPeople() {
+export async function getPeople(tablePage) {
   try {
-    const response = await api.get(GETPeople);
+    const response = await api.get(GETPeople, {
+      params: tablePage ? { page: tablePage } : {}, 
+    });
     return response.data;
   } catch (e) {
     console.error("Error during fetch people data", e);
