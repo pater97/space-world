@@ -24,7 +24,9 @@ function App() {
     planetDetails,
     loadingPlanetDetails,
     errorPlanetDetails,
-    showPlanetDetails
+    showPlanetDetails,
+    nextPage,
+    prevPage
   } = useSelector((state) => state.requestManager);
   const {} = useSelector((state) => state.requestManager);
   // # STATE
@@ -78,6 +80,12 @@ function App() {
             <p>Si è verificato un errore.</p>
           </div>
         )}
+      </div>
+      {/* NAVIGATION */}
+      <div className="navigation">
+        <span>{prevPage}</span>
+        <div className="separator"></div>
+        <span>{nextPage}</span>
       </div>
       {/* POPUP */}
       {showPlanetDetails &&  (

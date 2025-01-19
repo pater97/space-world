@@ -53,4 +53,25 @@
             object-fit: contain;
         }
     }
+    .navigation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 1rem ;
+        .separator{
+            height: 5px;
+            width: 5px;
+            background-color: $brand-color;
+            border-radius: 5px;
+        }
+        span{
+            cursor: pointer;
+            color: $brand-color;
+            transition: all .2s ease;
+            &:hover{
+                color: white;
+            }
+        }
+    }
 }
